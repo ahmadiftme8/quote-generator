@@ -98,12 +98,19 @@ p{
    border-radius: 5px;
    box-shadow: 3px 3px 0px rgba(70, 70, 70, 0.833);
    height: 2rem;
+   width: 3rem;
    cursor: pointer;
 }
 
 .twitter-btn:active{
     transform: translateY(3px);
     box-shadow:none;
+    background-color: rgb(62, 165, 225);
+}
+
+.twitter-btn svg{
+    width: 1.5rem;
+    fill: rgb(255, 255, 255);
 }
 
 
