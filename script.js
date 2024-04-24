@@ -8,67 +8,39 @@ const newQuoteBtn = document.querySelector('.new-quote-btn');
 const twitterBtn = document.querySelector('.twitter-btn');
 const loader = document.querySelector('.loader');
 
-function showLoading(){
-    qcc.hidden= true;
-    loader.hidden = false;
-    
-    
-}
-
-
-function hideLoadingWhenComplete(){
-    
-    qcc.hidden= false;
-    loader.hidden = true;
-    
-}
-
-
-let apiQuotes = [];
-
-
-
-
-
 function triggerNewQuote(){
-    showLoading();
-    const quote = apiQuotes[ Math.floor(Math.random()*apiQuotes.length)];
-    console.log(quote);
-   
-    quoteItself.textContent = quote.text;
-    autherName.textContent = quote.author;
 
-    hideLoadingWhenComplete();
 }
 
-async function getQuote(){
-    showLoading();
-    const apiUrl = 'https://type.fit/api/quotes'
+async function getQuoate(){
+    const proxyUrl = 'https://corsproxy.io/?';
+    const apiUrl = 'https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json ';
 
     try{
-        const response = await fetch(apiUrl);
-        apiQuotes = await response.json();
-        triggerNewQuote();
-    }catch{
-        alert(error);
+        const response = await fetch(proxyUrl + apiUrl);
+        const data = await response.json();
+
+        quoteItself.innerText = data.quoteText;
+        autherName.innerText= data.quoteAuthor;
+        
+
+    }catch(error){
+        getQuoate();
+        console.log(`oops! no quote!`, error);
     }
-    hideLoadingWhenComplete();
 }
 
 //on load
+getQuoate();
 
-
-
-//New Quote Button
-
-newQuoteBtn.addEventListener('click', triggerNewQuote )
+newQuoteBtn.addEventListener('click',  getQuoate)
 
 
 //Tweet Quote
 
 function tweetQuote(){
     
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteItself.textContent} - ${autherName.textContent}`;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=`;
     window.open(twitterUrl, '_blank')
 }
 
@@ -76,7 +48,6 @@ function tweetQuote(){
 
 twitterBtn.addEventListener('click', tweetQuote );
 
-getQuote();
 
 
 

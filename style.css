@@ -77,11 +77,13 @@ p{
 }
 
 .new-quote-btn{
-   background-color: white;
-   border: 1px solid rgb(192, 192, 192);
+   background-color: palevioletred;
+   color: white;
+   border: 0px solid rgb(192, 192, 192);
    border-radius: 5px;
-   box-shadow: 3px 3px 0px rgba(70, 70, 70, 0.617);
+   box-shadow: 3px 3px 0px rgba(70, 70, 70, 0.865);
    height: 2rem;
+   cursor: pointer;
 }
 
 .new-quote-btn:active{
@@ -90,11 +92,13 @@ p{
 }
 
 .twitter-btn{
-    background-color: white;
-   border: 1px solid rgb(192, 192, 192);
+    background-color: palevioletred;
+    color: white;
+    border: 0px solid rgb(192, 192, 192);
    border-radius: 5px;
-   box-shadow: 3px 3px 0px rgba(70, 70, 70, 0.617);
+   box-shadow: 3px 3px 0px rgba(70, 70, 70, 0.833);
    height: 2rem;
+   cursor: pointer;
 }
 
 .twitter-btn:active{
