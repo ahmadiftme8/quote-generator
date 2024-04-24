@@ -109,14 +109,22 @@ p{
 
 
 .loader {
-    border: 16px solid #cccccc;
+    border: 10px solid rgb(243, 224, 227);
     border-radius: 50%;
-    border-top: 16px solid #4f4f4f;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
+    border-top: 10px solid palevioletred;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+    
   }
+
+  .loader-container{
+    
+    justify-self: center;
+    align-self: center;
+  }
+  
   
   /* Safari */
   @-webkit-keyframes spin {
